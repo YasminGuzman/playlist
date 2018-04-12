@@ -24,12 +24,12 @@ var mySong = {
 	"Length": "2:25min"
 }
 
-var myPlayList = [
+var myPlaylist = [
 	{
 		"title":"King's Dead",
 		"artist":"Jay Rock, Kendrick Lamar, Future",
 		"youtube-url":"https://www.youtube.com/watch?v=VwAnsAUYnw4",
-		"image-url":"https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi9t--DxpHaAhVL64MKHdPxBzUQjRx6BAgAEAU&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DXspsXul710U&psig=AOvVaw1RJkQ9-Sv7uSSQeKRFMhfH&ust=1522413380905937",
+		"image-url":"https://i.ytimg.com/vi/XspsXul710U/maxresdefault.jpg",
 		"length": "4:23"
 		
 	},
@@ -37,7 +37,7 @@ var myPlayList = [
 		"title":"God's Plan",
 		"artist":"Drake",
 		"youtube-url":"https://www.youtube.com/watch?v=xpVfcZ0ZcFM",
-		"image-url":"https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj1x8mbxpHaAhWXw4MKHXJwBUUQjRx6BAgAEAU&url=https%3A%2F%2Fgenius.com%2FDrake-gods-plan-lyrics&psig=AOvVaw3lv5_6ThHInayc8nyg8U9s&ust=1522413451135985",
+		"image-url":"https://i.ytimg.com/vi/IbVC2jLOSsc/maxresdefault.jpg",
 		"length": "5:56"
 		
 	},
@@ -45,8 +45,8 @@ var myPlayList = [
 		"title":"Love.",
 		"artist":"Kendrick Lamar Ft. Zacari",
 		"youtube-url":"https://www.youtube.com/watch?v=ox7RsX1Ee34",
-		"image-url":"https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwjuts_axZHaAhWOxIMKHXXuDgAQjRx6BAgAEAU&url=https%3A%2F%2Fwww.versuri-lyrics.info%2Flove-kendrick-lamar-feat-zacari-lyrics%2F&psig=AOvVaw38INWSSO9PZm-AxODBuxVV&ust=1522413231053616"
-		length: 	
+		"image-url":"https://img-fanburst.freetls.fastly.net/NZ5PEsTBXVbDfWuyK8aV1JAL6yA=/400x400/cx2.fanburst.com/artwork/3bc0b691-ac24-42f1-b708-a2adad2989fe.png"
+			
 		
 	},
 	{
@@ -72,23 +72,31 @@ var myPlayList = [
 
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
-  $(".songs").append(mySong.title);
+	displayList() 
+	
+
+
   
 
 
-
+	
 
 
 
 });
 
-function displayList(){
-
-  
+function displayList(){ 
+for (var i=0; i< myPlaylist.length; i++){
+var song = myPlaylist[i];
+$(".songs").append("<h2>"+ song.title+ "</h2>");
+$(".songs").append("<h2>"+ song.artist + "</h2>");
+$(".songs").append("<img height=400 width=550 src='"+ song["image-url"] + "'/>");
+}
 }
 
+
 function clearList(){
-  
+ 
   
   
 }
