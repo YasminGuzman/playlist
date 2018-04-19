@@ -21,7 +21,7 @@ var mySong = {
 	"artist":"Prince Royce",
 	"youtube-url":"https://www.youtube.com/watch?v=tJrnILpLw0Q",
 	"image-url":"https://img.europapress.es/fotoweb/fotonoticia_20180316140747_640.jpg",
-	"Length": "2:25min"
+	"length": "2:25min"
 }
 
 var myPlaylist = [
@@ -30,7 +30,7 @@ var myPlaylist = [
 		"artist":"Jay Rock, Kendrick Lamar, Future",
 		"youtube-url":"https://www.youtube.com/watch?v=VwAnsAUYnw4",
 		"image-url":"https://i.ytimg.com/vi/XspsXul710U/maxresdefault.jpg",
-		"length": "4:23"
+		"length": "4:23min"
 		
 	},
 	{
@@ -38,30 +38,29 @@ var myPlaylist = [
 		"artist":"Drake",
 		"youtube-url":"https://www.youtube.com/watch?v=xpVfcZ0ZcFM",
 		"image-url":"https://i.ytimg.com/vi/IbVC2jLOSsc/maxresdefault.jpg",
-		"length": "5:56"
+		"length": "5:56min"
 		
 	},
 	{
-		"title":"Love.",
+		"title":"Love",
 		"artist":"Kendrick Lamar Ft. Zacari",
 		"youtube-url":"https://www.youtube.com/watch?v=ox7RsX1Ee34",
-		"image-url":"https://img-fanburst.freetls.fastly.net/NZ5PEsTBXVbDfWuyK8aV1JAL6yA=/400x400/cx2.fanburst.com/artwork/3bc0b691-ac24-42f1-b708-a2adad2989fe.png"
-			
-		
+		"image-url":"https://img-fanburst.freetls.fastly.net/NZ5PEsTBXVbDfWuyK8aV1JAL6yA=/400x400/cx2.fanburst.com/artwork/3bc0b691-ac24-42f1-b708-a2adad2989fe.png",
+		"length":"3:24min"
 	},
 	{
 		"title":"Finesse",
 		"artist":"Bruno Mars, Cardi B",
 		"youtube-url":"https://www.youtube.com/watch?v=LsoLEjrDogU",
 		"image-url": "https://thegrio.com/wp-content/uploads/2018/01/cardi-b-bruno-mars-e1515076782258.jpg",
-		"length": "3:43"
+		"length": "3:43min"
 	},
 	{
 		"title":"SAD!",
 		"artist":"xxxtentacion",
 		"youtube-url":"https://www.youtube.com/watch?v=pgN-vvVVxMA",
 		"image-url": "https://t2.genius.com/unsafe/220x0/https%3A%2F%2Fimages.genius.com%2F088c59a5eef050039cb3a46b0ac019c9.1000x1000x1.jpg",
-		"length": "2:46"
+		"length": "2:46min"
 	}
 	
 	
@@ -86,13 +85,21 @@ $( document ).ready(function() {
 });
 
 function displayList(){ 
+$(".mysong").append("<h2>" + mySong.title + "</h2>");
+$(".mysong").append("<h2>" + mySong.artist + "</h2>");
+$(".mysong").append("<img height=200 width=350 src='"+ mySong["image-url"] + "'/>");
+$(".mysong").append("<h2>"+ mySong.length + "</h2>");
+
 for (var i=0; i< myPlaylist.length; i++){
 var song = myPlaylist[i];
 $(".songs").append("<h2>"+ song.title+ "</h2>");
 $(".songs").append("<h2>"+ song.artist + "</h2>");
-$(".songs").append("<img height=400 width=550 src='"+ song["image-url"] + "'/>");
+$(".songs").append("<a href=<youtube-url>> <img height=200 width=350 src='"+ song["image-url"] + "'/></a>");
+$(".songs").append("<h2>"+ song.length + "</h2>");
+
 }
 }
+
 
 
 function clearList(){

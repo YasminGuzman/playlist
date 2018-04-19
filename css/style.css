@@ -1,4 +1,13 @@
 body{
-    background-color:lightblue;
-    
+    color:lightblue;
+    background-color:black;
+    line-height:normal ;
+}
+#mysong{
+    background:blue;
+    color:lightblue;
+}
+#myplaylist{
+ background:blue;
+    color:lightblue;
 }
